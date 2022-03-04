@@ -1,7 +1,5 @@
 package com.sbaitman.ctci.stringsandarrays;
 
-import com.sun.source.tree.Tree;
-
 /**
  * LeetCode 108
  */

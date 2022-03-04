@@ -1,5 +1,9 @@
 package com.sbaitman.ctci.linkedlist;
 
+/**
+ * LeetCode 61: Rotate List
+ * Given the head of a linked list, rotate the list to the right by k places.
+ */
 public class RotateList {
     public static LinkedList.ListNode rotateList(LinkedList.ListNode head, int k) {
         if(head == null || head.next == null || k == 0) {

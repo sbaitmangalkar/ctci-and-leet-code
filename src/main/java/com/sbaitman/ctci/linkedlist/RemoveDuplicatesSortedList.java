@@ -1,5 +1,11 @@
 package com.sbaitman.ctci.linkedlist;
 
+/**
+ * LeetCode 83: Removing Duplicates from sorted List
+ *
+ * Given the head of a sorted linked list, delete all duplicates such that each element appears only once.
+ * Return the linked list sorted as well.
+ */
 public class RemoveDuplicatesSortedList {
     public static LinkedList.ListNode removeDuplicates(LinkedList.ListNode head) {
         if(head == null || head.next == null) {
