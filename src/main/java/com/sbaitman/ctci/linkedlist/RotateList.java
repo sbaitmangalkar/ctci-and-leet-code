@@ -1,5 +1,7 @@
 package com.sbaitman.ctci.linkedlist;
 
+import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
+
 /**
  * LeetCode 61: Rotate List
  * Given the head of a linked list, rotate the list to the right by k places.
@@ -53,19 +55,9 @@ public class RotateList {
         return list;
     }
 
-    private static void printListFromNode(LinkedList.ListNode node) {
-        LinkedList.ListNode current = node;
-        while(current != null) {
-            System.out.print(current.data);
-            System.out.print("->");
-            current = current.next;
-        }
-    }
-
     public static void main(String[] args) {
         LinkedList list = createList0();
         printListFromNode(list.head);
-        System.out.println();
         LinkedList.ListNode newHead = rotateList(list.head, 2);
         printListFromNode(newHead);
     }

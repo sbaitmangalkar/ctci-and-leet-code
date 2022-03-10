@@ -32,20 +32,10 @@ public class SwapNodes {
         return list;
     }
 
-    private static void printListFromNode(LinkedList.ListNode node) {
-        LinkedList.ListNode current = node;
-        while(current != null) {
-            System.out.print(current.data);
-            System.out.print("->");
-            current = current.next;
-        }
-    }
-
     public static void main(String[] args) {
         LinkedList list = createList0();
-        printListFromNode(list.head);
-        System.out.println();
+        ListUtil.printListFromNode(list.head);
         LinkedList.ListNode result = swapPairs(list.head);
-        printListFromNode(result);
+        ListUtil.printListFromNode(result);
     }
 }

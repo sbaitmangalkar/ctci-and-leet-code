@@ -1,5 +1,7 @@
 package com.sbaitman.ctci.linkedlist;
 
+import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
+
 /**
  * LeetCode 82: Remove Duplicates from Sorted List II
  *
@@ -31,15 +33,6 @@ public class RemoveAllDuplicates {
         return dummy.next;
     }
 
-    private static void printListFromNode(LinkedList.ListNode node) {
-        LinkedList.ListNode current = node;
-        while(current != null) {
-            System.out.print(current.data);
-            System.out.print("->");
-            current = current.next;
-        }
-    }
-
     private static LinkedList createList() {
         LinkedList list = new LinkedList(new LinkedList.ListNode(1));
         list.insertAtTail(2);
@@ -55,7 +48,6 @@ public class RemoveAllDuplicates {
     public static void main(String[] args) {
         LinkedList list = createList();
         printListFromNode(list.head);
-        System.out.println();
         LinkedList.ListNode head = removeDuplicates(list.head);
         printListFromNode(head);
     }

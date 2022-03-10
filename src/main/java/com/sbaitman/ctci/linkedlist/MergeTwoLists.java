@@ -1,5 +1,7 @@
 package com.sbaitman.ctci.linkedlist;
 
+import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
+
 /**
  * LeetCode 21: Merge Two Sorted Lists
  * You are given the heads of two sorted linked lists list1 and list2.
@@ -35,27 +37,6 @@ public class MergeTwoLists {
         }
 
         return result.next;
-    }
-
-    private static int length(LinkedList.ListNode head) {
-        if(head == null) {
-            return 0;
-        }
-        int len = 1;
-        while(head.next != null) {
-            head = head.next;
-            len++;
-        }
-        return len;
-    }
-
-    private static void printListFromNode(LinkedList.ListNode node) {
-        LinkedList.ListNode current = node;
-        while(current != null) {
-            System.out.print(current.data);
-            System.out.print("->");
-            current = current.next;
-        }
     }
 
     private static LinkedList createList0() {

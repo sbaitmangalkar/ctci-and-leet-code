@@ -1,5 +1,7 @@
 package com.sbaitman.ctci.linkedlist;
 
+import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
+
 /**
  * LeetCode 2: Add Two Numbers
  * CTCI LinkedList: SumList problem
@@ -106,15 +108,6 @@ public class SumList {
 
         // 751 + 365 = 6
         return list;
-    }
-
-    private static void printListFromNode(LinkedList.ListNode node) {
-        LinkedList.ListNode current = node;
-        while(current != null) {
-            System.out.print(current.data);
-            System.out.print("->");
-            current = current.next;
-        }
     }
 
     public static LinkedList.ListNode sum(LinkedList.ListNode l1, LinkedList.ListNode l2, int carry) {

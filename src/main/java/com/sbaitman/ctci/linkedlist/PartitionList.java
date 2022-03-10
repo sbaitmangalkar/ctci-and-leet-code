@@ -1,5 +1,7 @@
 package com.sbaitman.ctci.linkedlist;
 
+import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
+
 /**
  * LeetCode 86: Partition List
  * Given the head of a linked list and a value x, partition it such that all nodes less than x come
@@ -29,15 +31,6 @@ public class PartitionList {
         list.insertAtTail(1);
 
         return list;
-    }
-
-    public static void printListFromNode(LinkedList.ListNode node) {
-        LinkedList.ListNode current = node;
-        while(current != null) {
-            System.out.print(current.data);
-            System.out.print("->");
-            current = current.next;
-        }
     }
 
     public static LinkedList.ListNode partition(LinkedList.ListNode head, int x) {

@@ -1,5 +1,7 @@
 package com.sbaitman.ctci.linkedlist;
 
+import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
+
 /**
  * LeetCode 19: Remove Nth Node From End of List
  *
@@ -43,15 +45,6 @@ public class RemoveNthLastNode {
 
     }
 
-    private static void printListFromNode(LinkedList.ListNode node) {
-        LinkedList.ListNode current = node;
-        while(current != null) {
-            System.out.print(current.data);
-            System.out.print("->");
-            current = current.next;
-        }
-    }
-
     private static LinkedList createList0() {
         LinkedList list = new LinkedList(new LinkedList.ListNode(1));
         list.insertAtTail(2);
@@ -75,7 +68,6 @@ public class RemoveNthLastNode {
     public static void main(String[] args) {
         LinkedList list = createList1();
         printListFromNode(list.head);
-        System.out.println();
         LinkedList.ListNode res = removeNthFromEnd(list.head, 1);
         printListFromNode(res);
     }
