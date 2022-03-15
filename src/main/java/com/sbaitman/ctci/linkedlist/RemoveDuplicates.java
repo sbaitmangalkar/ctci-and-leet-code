@@ -5,6 +5,9 @@ import java.util.Set;
 
 import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
 
+/**
+ * CTCI
+ */
 public class RemoveDuplicates {
     public static LinkedList.ListNode removeDuplicates(LinkedList.ListNode head) {
         if(head == null) {

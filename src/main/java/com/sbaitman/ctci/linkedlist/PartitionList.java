@@ -56,7 +56,7 @@ public class PartitionList {
         lTail.next = right.next;
         rTail.next = null;
 
-        return left.next;
+        return left.next; // left will be head
     }
 
     public static void main(String[] args) {
