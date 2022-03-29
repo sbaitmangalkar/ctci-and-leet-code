@@ -9,6 +9,25 @@ package com.sbaitman.ctci.linkedlist;
  * two subtrees of every node never differ by more than 1.
  */
 public class ListToBST {
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     public static TreeNode sortedListToBST(LinkedList.ListNode head) {
         if(head == null) {
             return null;
@@ -66,24 +85,5 @@ public class ListToBST {
         printListFromNode(list.head);
         System.out.println();
         TreeNode treeNode = sortedListToBST(list.head);
-    }
-}
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
