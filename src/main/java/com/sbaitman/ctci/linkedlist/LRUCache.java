@@ -18,7 +18,7 @@ import java.util.Map;
  * The functions get and put must each run in O(1) average time complexity.
  */
 public class LRUCache {
-    // Using linked list and hash map
+    // Using doubly linked list and hash map
     final Node head = new Node();
     final Node tail = new Node();
     Map<Integer, Node> nodeMap;
@@ -34,10 +34,12 @@ public class LRUCache {
     public void put(int key, int value) {
         Node node = nodeMap.get(key);
         if(node != null) {
+            //Update the value if node is present
             node.value = value;
             remove(node);
             add(node);
         } else {
+            // add the node if absent
             if(nodeMap.size() >= cacheCapacity) {
                 nodeMap.remove(tail.previous.key);
                 remove(tail.previous);
