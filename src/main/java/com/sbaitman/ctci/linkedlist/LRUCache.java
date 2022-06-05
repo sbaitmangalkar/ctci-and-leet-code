@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * LeetCode 146: LRU Cache
- * Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+ * Design a data structure that follows the constraints of Least Recently Used (LRU) cache.
  *
  * Implement the LRUCache class:
  *
@@ -18,6 +18,7 @@ import java.util.Map;
  * The functions get and put must each run in O(1) average time complexity.
  */
 public class LRUCache {
+    // Using linked list and hash map
     final Node head = new Node();
     final Node tail = new Node();
     Map<Integer, Node> nodeMap;
