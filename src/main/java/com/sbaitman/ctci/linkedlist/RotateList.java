@@ -8,40 +8,33 @@ import static com.sbaitman.ctci.linkedlist.ListUtil.printListFromNode;
  */
 public class RotateList {
     public static LinkedList.ListNode rotateList(LinkedList.ListNode head, int k) {
-        if(head == null || head.next == null || k == 0) {
+        if (head == null || head.next == null || k == 0) {
             return head;
         }
-        // Find length and tail of LinkedList
-        LinkedList.ListNode tail = head;
+
+        //Find the last element (along with length of the list) and connect it to head
+        LinkedList.ListNode last = head;
         int n = 1;
-        while(tail.next != null) {
-            tail = tail.next;
+        while(last.next != null) {
+            last = last.next;
             n++;
         }
 
-        //Adjust k
-        k = k % n;
+        k = k % n; // Ensures the number of rotations never exceeds size of the linkedlist
 
-        // If k == 0, then no need to move any nodes
-        if(k == 0) {
-            return head;
+        // Make the last node to point to current head
+        last.next = head;
+
+        // Find the number of jumps to be made in order to reach the new tail
+        // temp.next will be the new head and temp.next will point to null as it is new tail
+        int jump = n - k;
+        LinkedList.ListNode temp = last;
+        while(jump > 0) {
+            temp = temp.next;
+            jump--;
         }
-
-        // Find the number of steps to move in order to find the new head
-        int stepsToNewHead = n - k;
-        //Create a cycle by connecting tail to head
-        tail.next = head;
-        //Find the new tail
-        LinkedList.ListNode newTail = tail;
-        while(stepsToNewHead > 0) {
-            newTail = newTail.next;
-            stepsToNewHead--;
-        }
-
-        // once new tail is found, then newHead is the next node of newTail
-        LinkedList.ListNode newHead = newTail.next;
-        //break the cycle
-        newTail.next = null;
+        LinkedList.ListNode newHead = temp.next;
+        temp.next = null;
         return newHead;
     }
 
