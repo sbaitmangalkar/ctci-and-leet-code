@@ -15,24 +15,16 @@ public class TwoSum {
         if(nums == null || nums.length == 0) {
             return null;
         }
-        int[] result = new int[2];
-        int index0 = 0;
-        int index1 = 0;
         Map<Integer, Integer> table = new HashMap<>();
         for(int i = 0; i < nums.length; i++) {
-            index1 = i;
-            int temp = target - nums[i];
-            if (table.containsKey(temp)) {
-                index0 = table.get(temp);
-                break;
+            int expected = target - nums[i];
+            if(table.containsKey(expected)) {
+                return new int[]{table.get(expected), i};
             } else {
                 table.put(nums[i], i);
             }
         }
-
-        result[0] = index0;
-        result[1] = index1;
-        return result;
+        return new int[]{0, 0};
     }
 
     public static void main(String[] args) {
