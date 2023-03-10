@@ -38,15 +38,17 @@ public class MinimumTimeToCompleteTrips {
         for(int t : time) {
             min = Math.min(min, t);
         }
-        // hi should be minimum value in time[] * totalTrips
+        // hi should be minimum time taken * totalTrips (5) because, at least in 5 time units, 5 trips can be completed
         long hi = min * totalTrips;
 
         while(lo < hi) {
             long mid = lo + (hi - lo) / 2;
             long total = tripsInGivenTime(time, mid);
+            // If we cannot reach given total trips, then mid is small
             if(total < totalTrips) {
                 lo = mid + 1;
             } else {
+                // We can reach total trips, but hi should be as small as possible. Hence +1 is not required
                 hi = mid;
             }
         }
