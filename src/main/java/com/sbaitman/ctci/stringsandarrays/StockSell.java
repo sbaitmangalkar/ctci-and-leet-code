@@ -23,7 +23,7 @@ public class StockSell {
     public static int maxProfit(int[] prices) {
         int profit = 0;
         int todayProfit = 0;
-        int leastPrice = Integer.MAX_VALUE; // consider least price to be a max val
+        int leastPrice = Integer.MAX_VALUE; // consider lest price to be a max val
 
         for(int i = 0; i < prices.length; i++) {
             // if price[i] is less than leastPrice, consider that
